@@ -10,7 +10,6 @@ function IDGenerator(init){
     let id = init ;
     return {
         next : function(){
-            console.log(id,"=>",id+1);
             id +=1 ;
             return id ;
         }
