@@ -1,0 +1,111 @@
+
+.side-bar {
+    width: 100% ;
+    height: 100% ;
+    padding: 0.5rem ;
+    display: flex ;
+    flex-direction: column ;
+}
+
+.side-bar .section-header {
+    color: var(--neutral-500);
+    font-size: 0.8rem ;
+    margin-bottom: 0.5rem ;
+    text-transform: uppercase ;
+    font-weight: 600 ;
+}
+
+.side-bar .item-container {
+    flex: 1 ;
+    overflow: auto ;
+}
+
+.side-bar .item {
+    position: relative ;
+    height: 3rem ;
+    display: flex ;
+    align-items: center ;
+    border-radius: 4px ;
+    cursor: pointer ;
+    padding-left: 0.5rem ;
+}
+
+.side-bar .item .icon {
+    width : 3rem ;
+    height: 3rem ;
+    flex: 0 0 3rem ;
+    color: var(--surface-fg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.side-bar .item .title {
+    flex: 1 ;
+    text-overflow: ellipsis ;
+    overflow: hidden ;
+    color: var(--surface-fg);
+    font-weight: 600 ;
+}
+
+.side-bar .item .tasks {
+    background-color: var(--bg-d);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem ;
+    font-weight: 600 ;
+    color: var(--fg);
+    border-radius: 4px ;
+    margin-right: 0.5rem ;
+}
+
+.side-bar .item:hover {
+    background-color: var(--bg);
+}
+
+.side-bar .item + .item {
+    margin-top: 0.25rem ;
+}
+
+.side-bar .item[data-state="selected"] {
+    background-color: var(--bg);
+}
+
+.side-bar .item[data-state="selected"]::before {
+    content: "" ;
+    position: absolute ;
+    top: 50% ;
+    left: 6px ;
+    height: 1.5rem ;
+    width: 4px ;
+    background-color: var(--primary);
+    border-radius: 10px ;
+    transform: translate(0%,-50%);
+}
+
+.side-bar .item[data-state="selected"] .tasks {
+    background-color: var(--primary);
+    color: var(--neutral-100);
+}
+
+.side-bar .item[data-state="selected"] .icon,
+.side-bar .item[data-state="selected"] .title {
+    color: var(--primary);
+}
+
+.side-bar .add-btn {
+    margin-top: 0.75rem ;
+    position: relative ;
+    height: 3rem ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    border-radius: 4px ;
+    cursor: pointer ;
+    background-color: var(--primary);
+    color: var(--neutral-100);
+    font-weight: 800 ;
+}
+
+.side-bar .add-btn i {
+    margin-left: 0.75rem ;
+}

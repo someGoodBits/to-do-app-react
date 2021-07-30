@@ -1,0 +1,41 @@
+
+.task-list {
+    widows: 100% ;
+    color: var(--fg);
+}
+
+.task-list .task {
+    width: 100% ;
+    display: flex ;
+    align-items: center ;
+    padding: 0.75rem ;
+
+    background-color: var(--surface-bg);
+    border-radius: 4px ;
+    color: var(--surface-fg);
+
+    box-shadow: 0 0.25rem 0.5rem hsla(220,20%,10%,0.1);
+}
+
+.task-list .task .checkbox,
+.task-list .task .delete-btn {
+    height: 2rem ;
+    flex: 0 0 2rem ;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor: pointer ;
+}
+
+.task-list .task .task-description {
+    margin-left: 1rem ;
+    width: 100% ;
+}
+
+.task-list .task + .task {
+    margin-top: 0.25rem ;
+}
+
+.task-list .task .checkbox {
+    color: var(--primary);
+}

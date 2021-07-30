@@ -1,38 +1,143 @@
+
+* {
+    box-sizing: border-box ;
+    outline: none ;
+    user-select: none ;
+    -webkit-user-select: none ;
+}
+
 .App {
-  text-align: center;
+    --neutral-100 : hsl(220,20%,98%) ;
+    --neutral-200 : hsl(220,10%,90%) ;
+    --neutral-300 : hsl(220,10%,75%) ;
+    --neutral-500 : hsl(220,10%,50%) ;
+    --neutral-700 : hsl(220,10%,30%) ;
+    --neutral-900 : hsl(220,20%,20%) ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App[data-theme="light"] {
+    --primary : hsl(200,90%,50%);
+    --bg   : hsl(220,50%,96%) ;
+    --bg-d : hsl(220,20%,90%) ;
+    --fg   : hsl(220,12%,60%) ;
+    --surface-bg : hsl(220,20%,100%);
+    --surface-bg-h : hsl(220,20%,95%);
+    --surface-fg : hsl(220,12%,50%);
+
+    --separator-color : var(--neutral-200);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App[data-theme="dark"] {
+    --primary : hsl(200,90%,50%);
+    --fg : hsl(220,20%,80%);
+    --bg : hsl(220,20%,16%) ;
+    --bg-d : hsl(220,20%,12%) ;
+    --surface-bg : hsl(220,20%,20%);
+    --surface-bg-h : hsl(220,20%,26%);
+    --surface-fg : hsl(220,20%,80%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App {
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    width : 100vw ;
+    height: 100vh ;
+    min-width: 48rem ;
+    overflow: hidden ;
+    background-color: var(--surface-bg);
+
+    display: flex ;
+    flex-direction: column ;
 }
 
-.App-link {
-  color: #61dafb;
+.App main {
+    flex: 1 ;
+    display: flex ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App main .sidebar-container {
+    position: relative ;
+    width: 16rem ;
+    background-color: var(--surface-bg);
+}
+
+.App main .main {
+    flex: 1 ;
+    position: relative ;
+    background-color: var(--surface-bg);
+}
+
+.App main .main .content {
+    width: 100% ;
+    height: 100% ;
+    border-radius: 8px 0 0 0 ;
+    background-color: var(--bg);
+    overflow: auto ;
+    padding: 2rem ;
+
+    display: flex ;
+    flex-direction: column ;
+}
+
+.App main .main .content .collection-header {
+    font-size: 2rem ;
+    display: flex ;
+    margin-bottom: 2rem ;
+
+    color: var(--primary);
+}
+
+.App main .main .content .collection-header .collection-icon {
+    margin-right: 1rem ;
+}
+
+.App main .main .content .collection-body {
+    flex: 1 ;
+}
+
+.App main .main .content .collection-body .section-header {
+    color: var(--fg);
+    font-weight: 600 ;
+    margin-bottom: 1rem ;
+}
+
+.App main .main .content .collection-body .task-list-container {
+    position: relative ;
+}
+
+.App main .main .content .collection-footer  {
+    position: relative ;
+    padding: 0.75rem 0 ;
+    color: var(--surface-fg);
+}
+
+.App main .main .content .collection-footer input {
+    width: 100% ;
+    height: 3rem ;
+
+    border-radius: 8px ;
+    border: none ;
+
+    background-color: var(--surface-bg);
+    padding-left: 1rem ;
+    padding-right: 3rem ;
+    font-size: 1rem ;
+    color: var(--surface-fg);
+    box-shadow: 0 0.25rem 0.5rem hsla(220,20%,10%,0.1);
+}
+.App main .main .content .collection-footer input::placeholder {
+    color: var(--neutral-300);
+}
+
+.App main .main .content .collection-footer .icon {
+    position: absolute ;
+    top  : 0.75rem ;
+    right: 0rem ;
+    width : 3rem ;
+    height: 3rem ;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
