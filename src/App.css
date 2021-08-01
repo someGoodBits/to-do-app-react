@@ -54,6 +54,7 @@
 .App main {
     flex: 1 ;
     display: flex ;
+    overflow: hidden;
 }
 
 .App main .sidebar-container {
@@ -73,7 +74,7 @@
     height: 100% ;
     border-radius: 8px 0 0 0 ;
     background-color: var(--bg);
-    overflow: auto ;
+    overflow: hidden ;
     padding: 2rem ;
 
     display: flex ;
@@ -94,6 +95,7 @@
 
 .App main .main .content .collection-body {
     flex: 1 ;
+    overflow: auto ;
 }
 
 .App main .main .content .collection-body .section-header {
